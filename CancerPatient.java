@@ -5,30 +5,26 @@ import java.util.Date;
 
 public class CancerPatient extends Patient {
 	String Type;
-	static int Stage;
-	static String diagnosesDate;
-	static String[] medication;
-	public CancerPatient(String cancerType, int cancerStage,String cancerdiagnosesDate,String[] cancermedication) {
-		super(name, address, phone, gender, fileNumber, regDate);
-		Type = cancerType;
-		Stage = cancerStage;
-		diagnosesDate = cancerdiagnosesDate;
-		medication = cancermedication;
+	 int Stage;
+	 String diagnosesDate;
+	 String[] medication;
+	public CancerPatient() {
+		super();
 	}  
-	 String getCancerType(){
+	public String getCancerType(){
 		return Type;
 	}
-	int getCancerStage() {
+	public	int getCancerStage() {
 		return Stage;
 		
 	}
-	Date getDiagnosesDate() throws ParseException {
+	public	Date getDiagnosesDate() throws ParseException {
 		String date =diagnosesDate;
 		String format = "MMddyyyy";
 		return new SimpleDateFormat(format).parse(date);
 		
 	}
-	String getMedication(){
+	public	String getMedication(){
 		return Arrays.toString(medication);
 		
 	}

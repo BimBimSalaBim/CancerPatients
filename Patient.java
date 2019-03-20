@@ -3,34 +3,29 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Patient  {
-    	static String name;
-    	static String address;
-    	static String phone;
-    	static int gender;
-    	static int fileNumber;
-    	static String regDate;
+    	 String name;
+    	 String address;
+    	 String phone;
+    	 int gender;
+    	 int fileNumber;
+    	 String regDate;
     	
-  public Patient(String Patientname,String Patientaddress,String Patientphone,int Patientgender,int PatientfileNumber,String PatientregDate) {
-  	name = Patientname;
-  	address = Patientaddress;
-  	phone = Patientphone;
-  	gender = Patientgender;
-  	fileNumber = PatientfileNumber;
-  	regDate = PatientregDate;  	
+  public Patient() {
+  	
   }
-    	String getName(){
+  public String getName(){
     		return name;
     	}
     	
-    	String getAddress(){
+  public String getAddress(){
     		return address;
     	}
     	
-    	String getPhone(){
+  public String getPhone(){
     		return phone.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3");
     	}
     	
-    	String getGender(){
+  public String getGender(){
     		if(gender == 0) {
     			return "Male";
     		}
@@ -42,13 +37,13 @@ public class Patient  {
     		}
     	}
     	
-    	int getFileNumber(){
+  public int getFileNumber(){
     		return fileNumber;
     	}
     	
-    	Date getRegDate() throws ParseException{
+  public Date getRegDate() throws ParseException{
     		String date =regDate;
-    		String format = "MMDDYYYY";
+    		String format = "MMddyyyy";
     		return new SimpleDateFormat(format).parse(date);
     	}
     	

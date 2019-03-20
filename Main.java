@@ -35,43 +35,31 @@ public class Main {
 			out("What is med "+(j+1));
 			medication[j] = in.nextLine();
 		}*/
-		String[] meds = {"meds1", "meds2"};
-		Patient Patient = new Patient("Name of person", "Address of person", "9999999999", 0, 343243243,"03182019"/*name, address, phone, gender, fileNumber, regDate*/);	
-		CancerPatient cp= new CancerPatient("Brain",3,"03182019",meds/*Type, Stage, diagnosesDate, medication*/);
-
+		CancerPatient cp= new CancerPatient();
+		
 		String[] meds2= {"meds3", "meds4"};
-		out("Patient: "+cp.getName());
 		cp.setName("John Doe");
-		out("New Patient Name: "+cp.getName() +"\n");
-		out("Gender is: "+cp.getGender());
+		out("Patient Name: "+cp.getName() +"\n");
 		cp.setGender(3);
 		cp.setGender(1);
-		out("New Gender is: "+cp.getGender() +"\n");
-		out("Address is: "+cp.getAddress());
+		out("Gender is: "+cp.getGender() +"\n");
 		cp.setAddress("123 some street");
-		out("New Address is: "+cp.getAddress()+"\n");
-		out("Phone Number is: "+cp.getPhone());
+		out("Address is: "+cp.getAddress()+"\n");
 		cp.setPhone("3102345678");
-		out("New Phone Number is: "+cp.getPhone()+"\n");
-		out("File Number is: "+cp.getFileNumber());
+		out("Phone Number is: "+cp.getPhone()+"\n");
 		cp.setFileNumber(1111);
-		out("New File Number is: "+cp.getFileNumber()+"\n");
-		out("Diagnoses Date is: "+cp.getDiagnosesDate());
-		cp.setDiagnosesDate("12231995");
-		out("New Diagnoses Date is: "+cp.getDiagnosesDate()+"\n");
-		out("Reg Date is: "+cp.getRegDate());
-		cp.setRegDate("03222018");
-		out("New Reg Date is: "+cp.getRegDate()+"\n");
-		out("Type Of Cancer is: "+cp.getCancerType());
+		out("File Number is: "+cp.getFileNumber()+"\n");
+		cp.setDiagnosesDate("01222019");
+		out("Diagnoses Date is: "+cp.getDiagnosesDate()+"\n");
+		cp.setRegDate("03122018");
+		out("Reg Date is: "+cp.getRegDate()+"\n");
 		cp.setCancerType("Bone");
-		out("New Type Of Cancer is: "+cp.getCancerType()+"\n");
-		out("Current stage: "+cp.getCancerStage());
+		out("Type Of Cancer is: "+cp.getCancerType()+"\n");
 		cp.setCancerStage(5);
 		cp.setCancerStage(2);
-		out("New Current stage: "+cp.getCancerStage()+"\n");
-		out("Medication list: "+cp.getMedication());
+		out("Current stage: "+cp.getCancerStage()+"\n");
 		cp.setMedication(meds2);
-		out("New Medication list: "+cp.getMedication());
+		out("Medication list: "+cp.getMedication());
 
 	}
 
