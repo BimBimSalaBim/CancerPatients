@@ -7,36 +7,36 @@ public class Main {
 	public static void main(String[] args) throws ParseException {
 		
 		
-/*		For user input
+		CancerPatient cp= new CancerPatient();
+/*//		For user input
  		Scanner in = new Scanner(System.in);
 		out("What is name");
-    	String name = in.nextLine();
+		cp.setName(in.nextLine());
     	out("What is Address");
-    	String address = in.nextLine();
+    	cp.setAddress(in.nextLine());
     	out("What is Phone");
-    	String phone = (int) in.nextLine();
+    	cp.setPhone(in.nextLine());
     	out("What is gender (0 for Male 1 for Female)");
-    	int gender = in.nextInt();
+    	cp.setGender(in.nextInt());
     	out("What is File Number");
-    	int fileNumber = in.nextInt();
+    	cp.setFileNumber(in.nextInt());
     	out("What is reg date (MMDDYYYY)");
-    	String regDate = in.nextLine();
-    	
+    	cp.setRegDate(in.next());
     	out("what is the cancer type?");
-		String Type = in.next();
+    	cp.setCancerType(in.next());
 		out("what is the cancer Stage (1,2 or 3)");
-		int Stage = in.nextInt();
+		cp.setCancerStage(in.nextInt());
 		out("what is the diagnoses Date (MMDDYYYY)");
-		String diagnosesDate = in.nextLine();
+		cp.setDiagnosesDate(in.next());
 		out("How many meds are there?");
 		int i = in.nextInt();
 		String[] medication = new String[i];
 		for(int j = 0; i > j; j++) {
 			out("What is med "+(j+1));
-			medication[j] = in.nextLine();
-		}*/
-		CancerPatient cp= new CancerPatient();
-		
+			medication[j] = in.next();
+		}
+		cp.setMedication(medication);
+		*/
 		String[] meds2= {"meds3", "meds4"};
 		cp.setName("John Doe");
 		out("Patient Name: "+cp.getName() +"\n");
