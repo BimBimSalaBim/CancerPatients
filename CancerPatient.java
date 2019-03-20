@@ -1,7 +1,10 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Date;
 
 public class CancerPatient extends Patient {
-	static String Type;
+	String Type;
 	static int Stage;
 	static String diagnosesDate;
 	static String[] medication;
@@ -12,33 +15,40 @@ public class CancerPatient extends Patient {
 		diagnosesDate = cancerdiagnosesDate;
 		medication = cancermedication;
 	}  
-	static String getcancerType(){
+	 String getCancerType(){
 		return Type;
 	}
-	static int getCancerStage() {
+	int getCancerStage() {
 		return Stage;
 		
 	}
-	static String getDiagnosesDate() {
-		return diagnosesDate;
+	Date getDiagnosesDate() throws ParseException {
+		String date =diagnosesDate;
+		String format = "MMddyyyy";
+		return new SimpleDateFormat(format).parse(date);
 		
 	}
-	static String getMedication(){
+	String getMedication(){
 		return Arrays.toString(medication);
 		
 	}
-	static void setCancerType(String cancerType){
+	void setCancerType(String cancerType){
 		Type = cancerType;
 	}
-	static void setCancerStage(int cancerStage) {
+	void setCancerStage(int cancerStage) {
+		if(cancerStage >= 0 && cancerStage <=3) {
 		Stage = cancerStage;
+		}
+		else {
+			System.out.println("Cancer Stage is not valid");
+		}
 		
 	}
-	static void setDiagnosesDate(String DiagnosesDate) {
+	void setDiagnosesDate(String DiagnosesDate) {
 		diagnosesDate = DiagnosesDate;
 		
 	}
-	static void setMedication(String[] Medication){
+	void setMedication(String[] Medication){
 		medication = Medication;
 		
 	}

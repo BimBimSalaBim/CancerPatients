@@ -1,3 +1,7 @@
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class Patient  {
     	static String name;
     	static String address;
@@ -14,19 +18,19 @@ public class Patient  {
   	fileNumber = PatientfileNumber;
   	regDate = PatientregDate;  	
   }
-    	static String getName(){
+    	String getName(){
     		return name;
     	}
     	
-    	static String getaddress(){
+    	String getAddress(){
     		return address;
     	}
     	
-    	static String getPhone(){
-    		return phone;
+    	String getPhone(){
+    		return phone.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1)-$2-$3");
     	}
     	
-    	static String getGender(){
+    	String getGender(){
     		if(gender == 0) {
     			return "Male";
     		}
@@ -38,35 +42,42 @@ public class Patient  {
     		}
     	}
     	
-    	static int getFileNumber(){
+    	int getFileNumber(){
     		return fileNumber;
     	}
     	
-    	static String getRegDate(){
-    		return regDate;
+    	Date getRegDate() throws ParseException{
+    		String date =regDate;
+    		String format = "MMDDYYYY";
+    		return new SimpleDateFormat(format).parse(date);
     	}
     	
-    	static public void setName(String nameIn){
+    	public void setName(String nameIn){
     		name = nameIn;
     	}
     	
-    	static public void setAddress(String addressIn){
+    	public void setAddress(String addressIn){
     		address = addressIn;
     	}
     	
-    	static public void setPhone(String phoneIn){
+    	public void setPhone(String phoneIn){
     		phone = phoneIn;
     	}
     	
-    	static public void setGender(int genderIn){
-    		gender = genderIn;
+    	public void setGender(int genderIn){
+    		if(genderIn >= 0 && genderIn <=1) {
+    			gender = genderIn;
+    			}
+    			else {
+    				System.out.println("Gender is not valid");
+    			}
     	}
     	
-    	static public void setFileNumber(int fileNumberIn){
+    	public void setFileNumber(int fileNumberIn){
     		fileNumber = fileNumberIn;
     	}
     	
-    	static public void setRegDate(String regDateIn){
+    	public void setRegDate(String regDateIn){
     		regDate = regDateIn;
     	}
 
